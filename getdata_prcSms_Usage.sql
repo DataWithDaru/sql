@@ -62,7 +62,7 @@ declare @pUser varchar(1024)
 select top 1  
 	@pUser = isnull(FirstName,'John') + ' ' + isnull(' '+MiddleName,'') + isnull(LastName,'Doe')  
 from   
-	authorisation.UserProfile    
+	UserProfile    
 where   
 	FKUserID = @pRequestingUserID  
   
