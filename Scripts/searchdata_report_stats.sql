@@ -1,11 +1,9 @@
-/****** Script for SelectTopNRows command from SSMS  ******/
-
 declare @Search varchar(max)
 select @Search = 'DBName' + '_IO'
 
-------------------------------------------
---Temp Tables
-------------------------------------------
+------------------------------------------------------------
+               ------Temp Tables------
+------------------------------------------------------------
 use master
 declare @Databases as table
 (
@@ -50,6 +48,11 @@ declare
 select @id = count(1) from @Databases
 
 while (@id > 0)
+
+------------------------------------------------------------
+               ------Dynamic SQL------
+------------------------------------------------------------
+
 begin 
 	select 
 		@DBName = DBName
